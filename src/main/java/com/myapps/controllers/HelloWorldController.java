@@ -13,8 +13,7 @@ public class HelloWorldController {
  
 @RequestMapping(value="/helloworld")
  
-public ModelAndView helloWord() {
- return new ModelAndView("helloworldPage", "name", "hdh");
- 
-}
+	public ModelAndView helloWord() {
+		return new ModelAndView("helloworldPage", "name", "hdh");
+	}
 }
