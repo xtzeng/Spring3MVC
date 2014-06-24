@@ -1,6 +1,10 @@
 
 package com.myapps.controllers;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import 
 org.springframework.stereotype.Controller;
 import 
@@ -9,11 +13,44 @@ import
 org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value="/path")//表示要访问这个action的时候都要加上这个/path路径
 public class HelloWorldController {
  
-@RequestMapping(value="/helloworld")
- 
+	
+	/* 接收参数getParameter()的时候:
+	 * 如果地址栏/springmvc/hello.htm上面没有传递参数,那么当id为int型的时候会报错,当id为Integer的时候值为null
+	 * 当地址栏为/springmvc/hello.htm?id=10的时候,action中有三种接收方式
+	 * 1、String hello(@RequestParam(value = "userid") int id),这样会把地址栏参数名为userid的值赋给参数id,如果用地址栏上的参数名为id,则接收不到
+	 * 2、String hello(@RequestParam int id),这种情况下默认会把id作为参数名来进行接收赋值
+	 * 3、String hello(int id),这种情况下也会默认把id作为参数名来进行接收赋值
+	 * 注:如果参数前面加上@RequestParam注解,如果地址栏上面没有加上该注解的参数,例如:id,那么会报404错误,找不到该路径
+	 */
+	@RequestMapping(value="haha.do")
 	public ModelAndView helloWord() {
-		return new ModelAndView("helloworldPage", "name", "hdh");
+		System.out.println("hs");
+		return new ModelAndView("helloworldPage", "name", "xtz");
 	}
+	
+	
+	@RequestMapping(value="hello.do")
+	public ModelAndView hello(int id,Map<String, Object> map) {
+		System.out.println("hello.do Action:" + id);
+		map.put("name", "huangjie");
+		map.put("string", "一个字符串");
+		return new ModelAndView("hello");
+	}
+	
+	@RequestMapping(value="index.do")
+	public String index(int id) {
+		System.out.println("index.do Action" +id);
+		return "redirect:/index.jsp";//不能重定向web-info里面的文件,而且需要写上绝对路径
+	}
+	
+	@RequestMapping(value="/request.do")
+	public String fromRequest(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		System.out.println("From request.getParameter:"+id);
+		return "hello"; //相当于return new ModelAndView("hello");
+	}
+	
 }
