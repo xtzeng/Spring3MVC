@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import 
 org.springframework.stereotype.Controller;
 import 
@@ -16,6 +18,7 @@ org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value="/path")//表示要访问这个action的时候都要加上这个/path路径
 public class HelloWorldController {
  
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	/* 接收参数getParameter()的时候:
 	 * 如果地址栏/springmvc/hello.htm上面没有传递参数,那么当id为int型的时候会报错,当id为Integer的时候值为null
@@ -27,14 +30,15 @@ public class HelloWorldController {
 	 */
 	@RequestMapping(value="haha.do")
 	public ModelAndView helloWord() {
-		System.out.println("hs");
+		logger.info("haha.do");
 		return new ModelAndView("helloworldPage", "name", "xtz");
 	}
 	
 	
 	@RequestMapping(value="hello.do")
 	public ModelAndView hello(int id,Map<String, Object> map) {
-		System.out.println("hello.do Action:" + id);
+		
+		logger.info("hello.do Action" +id);
 		map.put("name", "huangjie");
 		map.put("string", "一个字符串");
 		return new ModelAndView("hello");
@@ -42,14 +46,23 @@ public class HelloWorldController {
 	
 	@RequestMapping(value="index.do")
 	public String index(int id) {
-		System.out.println("index.do Action" +id);
-		return "redirect:/index.jsp";//不能重定向web-info里面的文件,而且需要写上绝对路径
+		
+		logger.info("index.do Action id====="+id);
+		return "redirect:/index.jsp?id="+id;//不能重定向web-info里面的文件,而且需要写上绝对路径
 	}
+	
+	
+	@RequestMapping(value="redicect.do")
+	public String rederect(int id) {
+		logger.info("Redirect id ============"+id);
+		return "redirect:/WEB-INF/views/redirect.jsp?id=" + id;
+	}
+	
 	
 	@RequestMapping(value="/request.do")
 	public String fromRequest(HttpServletRequest request) {
 		String id = request.getParameter("id");
-		System.out.println("From request.getParameter:"+id);
+		logger.info("From request.getParameter:"+id);
 		return "hello"; //相当于return new ModelAndView("hello");
 	}
 	
