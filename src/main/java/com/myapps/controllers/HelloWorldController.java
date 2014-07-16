@@ -7,12 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import 
-org.springframework.stereotype.Controller;
-import 
-org.springframework.web.bind.annotation.RequestMapping;
-import 
-org.springframework.web.servlet.ModelAndView;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value="/path")//表示要访问这个action的时候都要加上这个/path路径
