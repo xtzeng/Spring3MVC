@@ -16,17 +16,17 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
     
+    
+    
     <servlet> 
 		<servlet-name>urlencode</servlet-name> 
 		<servlet-class>com.immutable.alias.servlet.EncodeURL</servlet-class> 
 	</servlet> 
-<!-- ... --> 
+
 	<servlet-mapping> 
 		<servlet-name>urlencode</servlet-name> 
 		<url-pattern>/urlencode</url-pattern> 
 	</servlet-mapping>
-    
-    
     
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
