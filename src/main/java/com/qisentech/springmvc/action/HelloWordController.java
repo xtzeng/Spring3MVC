@@ -31,4 +31,10 @@ public class HelloWordController {
         mv.addObject("content", " Hello world ， test my first spring mvc ! ");
         return mv;
     }
+
+	@RequestMapping(value="/hello.do")
+	public String ef(ModelAndView modelAndView) {
+		
+		return "he";
+	}
 }
