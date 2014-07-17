@@ -13,7 +13,7 @@
     ">
     
     <!-- 搜索的控制类路径(C) -->
-    <context:component-scan base-package="com.qisentech.springmvc.action.*" />
+    <context:component-scan base-package="com.qisentech.springmvc.action" />
     
     <!-- 配置视图路径(V)
     <bean id="viewResolver"    class="org.springframework.web.servlet.view.InternalResourceViewResolver">

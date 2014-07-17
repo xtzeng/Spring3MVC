@@ -6,8 +6,6 @@
  */
 package com.qisentech.springmvc.action;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * <p>Description: </p>
  *
- * @author qsyang
+ * @author xiaoti.zeng
  * @version 1.0
  */
 @Controller
@@ -26,8 +24,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class HelloWordController {
 
   
-	@RequestMapping(value="hallo.do")
-    public ModelAndView handleRequest() throws Exception {
+	@RequestMapping(value="/hallo.do")
+    public ModelAndView test() throws Exception {
         ModelAndView mv = new ModelAndView("hello");
         mv.addObject("title", "Spring MVC And Freemarker");
         mv.addObject("content", " Hello world ， test my first spring mvc ! ");
