@@ -7,5 +7,14 @@
     </head>
     <body>
        hello this is return by a string!!!
+       
+       <form action="http://www.W3CSchool.cn/example/html/form_action.asp" method="get">
+  <p>First name: <input type="text" name="fname" /></p>
+  <p>Last name: <input type="text" name="lname" /></p>
+  <input type="submit" value="Submit" />
+</form>
+
+
+	<p>请单击确认按钮，输入会发送到服务器上名为 "form_action.asp" 的页面。</p>
     </body>
 </html>
