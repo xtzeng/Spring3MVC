@@ -30,8 +30,7 @@ public class PostDemo {
 		System.out.println(params);
 		try {
 			URL url = new URL(strURL);// 创建连接
-			HttpURLConnection connection = (HttpURLConnection) url
-					.openConnection();
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.setDoOutput(true);
 			connection.setDoInput(true);
 			connection.setUseCaches(false);
