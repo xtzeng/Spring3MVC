@@ -33,7 +33,7 @@
    <script type='text/javascript'>
        // 第一种滚动：
 /*  */
-　　  				  var newsOne = document.getElementById("newsOne");
+　　  				var newsOne = document.getElementById("newsOne");
                     var newsTwo = document.getElementById("newsTwo");
                     var latestNews = document.getElementById("latestNews");
 
