@@ -11,3 +11,6 @@
 2014-08-06 13:32:29.437 [10268916@qtp-27427682-1] INFO  com.myapps.controllers.HelloWorldController - index.do Action id=====1
 2014-08-06 13:34:36.296 [19235919@qtp-6278953-1] INFO  com.myapps.controllers.HelloWorldController - Redirect id ============1
 2014-08-06 13:41:48.375 [19235919@qtp-6278953-1] INFO  com.myapps.controllers.HelloWorldController - From request.getParameter:null
+2014-08-06 13:50:13.765 [19235919@qtp-6278953-1] INFO  com.myapps.controllers.HelloWorldController - From request.getParameter:8
+2014-08-06 13:50:17.625 [19235919@qtp-6278953-1] INFO  com.myapps.controllers.HelloWorldController - From request.getParameter:8
+2014-08-06 13:55:07.078 [19235919@qtp-27427682-1] INFO  com.myapps.controllers.HelloWorldController - From request.getParameter:8

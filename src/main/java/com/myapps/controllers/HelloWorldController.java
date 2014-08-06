@@ -69,9 +69,12 @@ public class HelloWorldController {
 	
 	
 	@RequestMapping(value="/request.do")
-	public String fromRequest(HttpServletRequest request) {
+	public String fromRequest(HttpServletRequest request,Map<String, Object> map) {
 		String id = request.getParameter("id");
 		logger.info("From request.getParameter:"+id);
+		map.put("id", id);
+		map.put("name","mj");
+		map.put("string", "中文");
 		return "hello"; //相当于return new ModelAndView("hello");
 	}
 	
