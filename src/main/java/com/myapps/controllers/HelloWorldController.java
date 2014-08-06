@@ -11,6 +11,7 @@ import
 org.springframework.stereotype.Controller;
 import 
 org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import 
 org.springframework.web.servlet.ModelAndView;
 
@@ -31,29 +32,37 @@ public class HelloWorldController {
 	@RequestMapping(value="haha.do")
 	public ModelAndView helloWord() {
 		logger.info("haha.do");
-		return new ModelAndView("helloworldPage", "name", "xtz");
+		return new ModelAndView("helloworldPage", "name", "史密斯");
 	}
 	
 	
 	@RequestMapping(value="hello.do")
-	public ModelAndView hello(int id,Map<String, Object> map) {
+	public ModelAndView hello(@RequestParam(value="id", required=false, defaultValue="123")int id,Map<String, Object> map) {
 		
-		logger.info("hello.do Action" +id);
+		logger.info("hello.do Action Param Id====" +id);
+		map.put("id", id);
 		map.put("name", "huangjie");
 		map.put("string", "一个字符串");
 		return new ModelAndView("hello");
 	}
 	
 	@RequestMapping(value="index.do")
-	public String index(int id) {
+	public String index(@RequestParam(value="id", required=false, defaultValue="1")int id) {
 		
 		logger.info("index.do Action id====="+id);
 		return "redirect:/index.jsp?id="+id;//不能重定向web-info里面的文件,而且需要写上绝对路径
 	}
 	
 	
+	
+	/**
+	 * http://localhost:8080/WEB-INF/views/redirect.jsp?id=1
+	 * HTTP ERROR 404
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value="redicect.do")
-	public String rederect(int id) {
+	public String rederect(@RequestParam(value="id", required=false, defaultValue="1")int id) {
 		logger.info("Redirect id ============"+id);
 		return "redirect:/WEB-INF/views/redirect.jsp?id=" + id;
 	}
