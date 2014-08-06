@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   
   <properties>
-	<spring.version>3.0.5.RELEASE</spring.version>
+	<spring.version>3.1.1.RELEASE</spring.version>
   </properties>
   
 <dependencies>
@@ -46,12 +46,19 @@
 		<version>${spring.version}</version>
 	</dependency>
 
+ <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>3.1.1.RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>3.1.1.RELEASE</version>
+    </dependency>
+
 <!-- Other dependencies -->
-	<dependency>
-		<groupId>commons-logging</groupId>
-		<artifactId>commons-logging</artifactId>
-		<version>1.1.1</version>
-	</dependency>
 	
 	<dependency>
 		<groupId>javax.servlet</groupId>
@@ -62,7 +69,7 @@
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
-		<version>4.8.1</version>
+		<version>4.11</version>
 	</dependency>
 	
 	<dependency>
@@ -84,11 +91,7 @@
 	<version>5.1.21</version>
 	</dependency>
 	  
-        <dependency>
-	<groupId>org.apache.poi</groupId>
-	<artifactId>poi-scratchpad</artifactId>
-	<version>3.0.2-FINAL</version>
-</dependency>
+
             
 	
 </dependencies>
